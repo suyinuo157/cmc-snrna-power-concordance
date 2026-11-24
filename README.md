@@ -30,16 +30,37 @@ scripts/
   de_recount.py               recount of significant genes across cell types
   analysis_de.py              donor-level DE for one cell type (linear model + BH)
   analysis_de_all.py          donor-level DE across all cell types
-  cmc_sA3b_sens.py            sample-level technical-axis simulation and lambda* calibration
-  cmc_sA4b_perm_robust.py     donor-label permutation null, plain and stratified
+  cmc_s5a_pseudobulk.py       donor x cell-type pseudobulk construction
+  cmc_s5b_deseq2.R            per-cell-type DESeq2 model without the quality term
+  cmc_s5b2_deseq2_rin.R       DESeq2 sensitivity analysis using RIN
+  cmc_s5c_deseq2_qc.R         main model (~ qc + SCZ + male + Age + PMI + pH)
+  cmc_s7_concordance.py       cross-cell-type sign-concordance statistic
+  cmc_sA1_engine_check.py     comparison of the linear engine with DESeq2
+  cmc_sA1b_contrast_probe.py  contrast-specification probe
+  cmc_sA1c_sizefactor.py      size-factor diagnostic
+  cmc_sA2_spikein.R           spike-in power simulation
+  cmc_sA2_summary.py          power and empirical FDR summary of the spike-in runs
+  cmc_sA3_inflation.py        single technical axis, first version
+  cmc_sA3b_sens.py            technical-axis grid and lambda* calibration
+  cmc_sA4_realperm.py         donor-label permutation on the observed data
+  cmc_sA4b_perm_robust.py     1,000 permutations, plain and stratified
+  cmc_sA5_globalBH.R          global BH correction across all 142,722 tests
+  cmc_s8_deseq2_sex.R         sex-difference DESeq2 models
+  cmc_s8_annotate.py          annotation of the sex-difference results
+  cmc_s8_clean.py             filtering of the sex-difference tables
+  cmc_s8_l6ct_check.py        size-factor check of the L6 CT cell type
+  cmc_sD1_consistency.py      four-module concordance table
+  cmc_sD2_xist_qc.py          XIST separation positive control
+  cmc_sD3_figdata.py          figure input tables
+  cmc_sD4_replicate_deca.py   replication of the external sex-bias list
+  cmc_sD5_export_transfer.py  export of the transfer-test tables
 figures/
   make_figures.py             generates Fig. 1-4 (and the sex-difference panels)
   data/                       small derived tables read by make_figures.py
 ```
 
-Server-side scripts that fit the DESeq2 models, run the spike-in simulation, compute the global-BH
-sensitivity analysis, and export the external-list transfer test are deposited in the same `scripts/`
-directory of the archived release.
+Scripts were run in the original analysis environment. The absolute data paths at the top of each script
+(`/data2/penghuiminRL/scz`) must be adjusted to a local copy of the brainSCOPE files before rerunning.
 
 ## Software
 
