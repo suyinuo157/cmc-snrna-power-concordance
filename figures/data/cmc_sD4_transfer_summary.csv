@@ -1,0 +1,3 @@
+module,comparisons,same,rate,ci_lo,ci_hi
+autosomal,1521,795,0.5227,0.4976,0.5477
+sexchr,213,194,0.9108,0.8649,0.9422
